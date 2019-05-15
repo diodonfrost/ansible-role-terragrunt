@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - role: ansible-role-terragrunt
+      vars:
+        terragrunt_version: v0.17.1
