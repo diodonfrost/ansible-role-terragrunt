@@ -208,15 +208,6 @@ env:
     version: "stage3"
     playbook: terragrunt-v0.17.1
 
-#--------------------------------
-#
-# Clearlinux
-#
-#--------------------------------
-  - distribution: clearlinux
-    version: "rolling"
-    playbook: terragrunt-v0.17.1
-
 before_install:
   # Build docker container
   - 'sudo docker pull diodonfrost/${distribution}-${version}-ansible:latest'
