@@ -1,0 +1,39 @@
+---
+# tasks file for install terragrunt on Windows system
+
+- name: Windows | Get the latest published full release for the repository
+  win_uri:
+    url: https://api.github.com/repos/gruntwork-io/terragrunt/releases/latest
+    return_content: yes
+    headers:
+      user-agent: Mozilla/5.0
+  register: terragrunt_index
+  when: terragrunt_version == "latest"
+
+- name: Windows | Filter the latest Terragrunt version
+  set_fact:
+    terragrunt_version: "{{ (terragrunt_index.content | from_json).name }}"
+  when: terragrunt_version == 'latest'
+
+# This task avoids downloading Terragrunt every time
+- name: Windows | Check if Terragrunt is present on Windows with the right version
+  win_shell: terragrunt --version
+  register: terragrunt_installed_version
+  ignore_errors: yes
+  changed_when: false
+  failed_when: false
+
+- name: Windows | Create Terragrunt folder
+  win_file:
+    path: "{{ terragrunt_path }}"
+    state: directory
+
+- name: Windows | Download Terragrunt
+  win_get_url:
+    url: "https://github.com/gruntwork-io/terragrunt/releases/download/{{ terragrunt_version }}/terragrunt_windows_amd64.exe"
+    dest: "{{ terragrunt_path }}terragrunt.exe"
+  when: terragrunt_version not in terragrunt_installed_version.stdout
+
+- name: Windows | Add Terragrunt to PATH
+  win_path:
+    elements: "{{ terragrunt_path }}"

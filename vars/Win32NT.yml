@@ -1,0 +1,3 @@
+---
+# vars file for terragrunt in Windows system
+terragrunt_path: C:\HashiCorp\terragrunt\bin\
