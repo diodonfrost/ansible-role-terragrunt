@@ -9,9 +9,6 @@ env:
 # CentOS
 #
 #-----------------------------------------------
-#  - distribution: centos
-#    version: "7"
-#    playbook: terragrunt-latest
   - distribution: centos
     version: "7"
     playbook: terragrunt-v0.17.1
@@ -21,40 +18,22 @@ env:
 # Fedora
 #
 #--------------------------------
-#  - distribution: fedora
-#    version: "31"
-#    playbook: terragrunt-latest
   - distribution: fedora
     version: "31"
     playbook: terragrunt-v0.17.1
-#  - distribution: fedora
-#    version: "30"
-#    playbook: terragrunt-latest
   - distribution: fedora
     version: "30"
     playbook: terragrunt-v0.17.1
-#  - distribution: fedora
-#    version: "29"
-#    playbook: terragrunt-latest
   - distribution: fedora
     version: "29"
     playbook: terragrunt-v0.17.1
-#  - distribution: fedora
-#    version: "28"
-#    playbook: terragrunt-latest
   - distribution: fedora
     version: "28"
     playbook: terragrunt-v0.17.1
-#  - distribution: fedora
-#    version: "27"
-#    playbook: terragrunt-latest
   - distribution: fedora
     version: "27"
     playbook: terragrunt-v0.17.1
   - distribution: fedora
-#    version: "26"
-#    playbook: terragrunt-latest
-#  - distribution: fedora
     version: "26"
     playbook: terragrunt-v0.17.1
 
@@ -63,27 +42,15 @@ env:
 # Ubuntu
 #
 #--------------------------------
-#  - distribution: ubuntu
-#    version: "19.04"
-#    playbook: terragrunt-latest
   - distribution: ubuntu
     version: "19.04"
     playbook: terragrunt-v0.17.1
-#  - distribution: ubuntu
-#    version: "18.04"
-#    playbook: terragrunt-latest
   - distribution: ubuntu
     version: "18.04"
     playbook: terragrunt-v0.17.1
-#  - distribution: ubuntu
-#    version: "16.04"
-#    playbook: terragrunt-latest
   - distribution: ubuntu
     version: "16.04"
     playbook: terragrunt-v0.17.1
-#  - distribution: ubuntu
-#    version: "14.04"
-#    playbook: terragrunt-latest
   - distribution: ubuntu
     version: "14.04"
     playbook: terragrunt-v0.17.1
@@ -93,21 +60,12 @@ env:
 # Debian
 #
 #--------------------------------
-#  - distribution: debian
-#    version: "10"
-#    playbook: terragrunt-latest
   - distribution: debian
     version: "10"
     playbook: terragrunt-v0.17.1
-#  - distribution: debian
-#    version: "9"
-#    playbook: terragrunt-latest
   - distribution: debian
     version: "9"
     playbook: terragrunt-v0.17.1
-#  - distribution: debian
-#    version: "8"
-#    playbook: terragrunt-latest
   - distribution: debian
     version: "8"
     playbook: terragrunt-v0.17.1
@@ -117,9 +75,6 @@ env:
 # Oraclelinux
 #
 #--------------------------------
-#  - distribution: oraclelinux
-#    version: "7"
-#    playbook: terragrunt-latest
   - distribution: oraclelinux
     version: "7"
     playbook: terragrunt-v0.17.1
@@ -129,9 +84,6 @@ env:
 # Amazonlinux
 #
 #--------------------------------
-#  - distribution: amazonlinux
-#    version: "2"
-#    playbook: terragrunt-latest
   - distribution: amazonlinux
     version: "2"
     playbook: terragrunt-v0.17.1
@@ -141,33 +93,18 @@ env:
 # Opensuse
 #
 #--------------------------------
-#  - distribution: opensuse
-#    version: "15.1"
-#    playbook: terragrunt-latest
   - distribution: opensuse
     version: "15.1"
     playbook: terragrunt-v0.17.1
-#  - distribution: opensuse
-#    version: "15"
-#    playbook: terragrunt-latest
   - distribution: opensuse
     version: "15"
     playbook: terragrunt-v0.17.1
-#  - distribution: opensuse
-#    version: "42.3"
-#    playbook: terragrunt-latest
   - distribution: opensuse
     version: "42.3"
     playbook: terragrunt-v0.17.1
-#  - distribution: opensuse
-#    version: "42.2"
-#    playbook: terragrunt-latest
   - distribution: opensuse
     version: "42.2"
     playbook: terragrunt-v0.17.1
-#  - distribution: opensuse
-#    version: "13.2"
-#    playbook: terragrunt-latest
   - distribution: opensuse
     version: "13.2"
     playbook: terragrunt-v0.17.1
@@ -177,9 +114,6 @@ env:
 # Archlinux
 #
 #--------------------------------
-#  - distribution: archlinux
-#    version: "rolling"
-#    playbook: terragrunt-latest
   - distribution: archlinux
     version: "rolling"
     playbook: terragrunt-v0.17.1
@@ -189,9 +123,6 @@ env:
 # Alpine
 #
 #--------------------------------
-#  - distribution: alpine
-#    version: "rolling"
-#    playbook: terragrunt-latest
   - distribution: alpine
     version: "rolling"
     playbook: terragrunt-v0.17.1
@@ -201,15 +132,12 @@ env:
 # Gentoo
 #
 #--------------------------------
-#  - distribution: gentoo
-#    version: "stage3"
-#    playbook: terragrunt-latest
   - distribution: gentoo
     version: "stage3"
     playbook: terragrunt-v0.17.1
 
 before_install:
-  # Build docker container
+  # Pull docker container
   - 'sudo docker pull diodonfrost/${distribution}-${version}-ansible:latest'
 
 script:
