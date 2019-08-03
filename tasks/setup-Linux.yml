@@ -10,8 +10,13 @@
 
 - name: Linux | Filter the latest Terragrunt version
   set_fact:
-    terragrunt_version: "{{ (terragrunt_index.content | from_json).name }}"
+    terragrunt_version_to_install: "{{ (terragrunt_index.content | from_json).name }}"
   when: terragrunt_version == 'latest'
+
+- name: Linux | Use the specified Terragrunt version when latest var is not define
+  set_fact:
+    terragrunt_version_to_install: "{{ terragrunt_version }}"
+  when: terragrunt_version != 'latest'
 
 # This task avoids downloading terragrunt every time
 - name: Linux | Check if terragrunt is present with the right version
@@ -23,7 +28,7 @@
 
 - name: Linux | Install terragrunt
   get_url:
-    url: "https://github.com/gruntwork-io/terragrunt/releases/download/{{ terragrunt_version }}/terragrunt_linux_amd64"
+    url: "https://github.com/gruntwork-io/terragrunt/releases/download/{{ terragrunt_version_to_install }}/terragrunt_linux_amd64"
     dest: "{{ terragrunt_path }}terragrunt"
     mode: u+x,g+x,o+x
-  when: terragrunt_version not in terragrunt_installed_version.stdout | default('')
+  when: terragrunt_version_to_install not in terragrunt_installed_version.stdout | default('')
