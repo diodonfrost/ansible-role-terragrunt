@@ -31,4 +31,5 @@
     url: "https://github.com/gruntwork-io/terragrunt/releases/download/{{ terragrunt_version_to_install }}/terragrunt_linux_amd64"
     dest: "{{ terragrunt_path }}terragrunt"
     mode: u+x,g+x,o+x
-  when: terragrunt_version_to_install not in terragrunt_installed_version.stdout | default('')
+    force: yes
+  when: terragrunt_version_to_install not in terragrunt_installed_version.stdout_lines | default('empty') | first
