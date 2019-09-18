@@ -45,8 +45,6 @@ platforms:
         - tests/vagrant/vagrant_windows_target.rb
     transport:
       name: winrm
-    provisioner:
-      name: shell
 
 suites:
   - name: default
