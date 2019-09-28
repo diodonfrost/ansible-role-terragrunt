@@ -19,6 +19,8 @@ env:
 #
 #--------------------------------
   - distribution: fedora
+    version: "32"
+  - distribution: fedora
     version: "31"
     playbook: terragrunt-v0.17.1
   - distribution: fedora
