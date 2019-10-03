@@ -10,6 +10,9 @@ env:
 #
 #-----------------------------------------------
   - distribution: centos
+    version: "8"
+    playbook: terragrunt-v0.17.1
+  - distribution: centos
     version: "7"
     playbook: terragrunt-v0.17.1
 
