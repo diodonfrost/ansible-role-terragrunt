@@ -93,8 +93,9 @@ This role has multiple variables. The defaults for all these variables are the f
 # Default: latest
 terragrunt_version: latest
 
-# Terragrunt destination path, default value depends on the operating system
-terragrunt_path: /usr/local/bin/
+# Define where to install Terragrunt binary
+# Default: use local system path defined in Ansible vars/*.yml
+terragrunt_path: "{{ terragrunt_default_path }}"
 ```
 
 ## Dependencies
