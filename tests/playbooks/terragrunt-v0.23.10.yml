@@ -4,4 +4,4 @@
   roles:
     - role: ansible-role-terragrunt
       vars:
-        terragrunt_version: v0.17.1
+        terragrunt_version: v0.23.10
