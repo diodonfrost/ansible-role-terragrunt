@@ -25,8 +25,8 @@ platforms:
   - name: fedora-28
   - name: fedora-27
   - name: fedora-26
+  - name: ubuntu-20.04
   - name: ubuntu-18.04
-  - name: ubuntu-17.10
   - name: ubuntu-16.04
   - name: ubuntu-14.04
   - name: debian-9
