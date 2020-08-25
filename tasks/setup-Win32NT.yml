@@ -22,7 +22,7 @@
 
 # This task avoids downloading Terragrunt every time
 - name: Windows | Check if Terragrunt is present on Windows with the right version
-  win_shell: terragrunt --version
+  win_command: terragrunt --version
   register: terragrunt_installed_version
   ignore_errors: yes
   changed_when: false
