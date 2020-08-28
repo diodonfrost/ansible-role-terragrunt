@@ -1,5 +1,0 @@
----
-- name: ansible-role-terragrunt
-  hosts: windows-machines
-  roles:
-    - ansible-role-terragrunt
