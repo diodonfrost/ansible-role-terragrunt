@@ -1,7 +1,7 @@
 # ansible-role-terragrunt
 
 [![Build Status](https://travis-ci.com/diodonfrost/ansible-role-terragrunt.svg?branch=master)](https://travis-ci.com/diodonfrost/ansible-role-terragrunt)
-[![CI](https://github.com/diodonfrost/ansible-role-terragrunt/workflows/CI/badge.svg)](https://github.com/diodonfrost/ansible-role-terragrunt/actions)
+[![molecule](https://github.com/diodonfrost/ansible-role-terragrunt/workflows/molecule/badge.svg)](https://github.com/diodonfrost/ansible-role-terragrunt/actions)
 [![Ansible Galaxy](https://img.shields.io/badge/galaxy-diodonfrost.terragrunt-660198.svg)](https://galaxy.ansible.com/diodonfrost/terragrunt)
 
 This role provide a compliance for install terragrunt on your target host.
