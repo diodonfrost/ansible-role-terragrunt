@@ -1,6 +1,5 @@
 # ansible-role-terragrunt
 
-[![Build Status](https://travis-ci.com/diodonfrost/ansible-role-terragrunt.svg?branch=master)](https://travis-ci.com/diodonfrost/ansible-role-terragrunt)
 [![molecule](https://github.com/diodonfrost/ansible-role-terragrunt/workflows/molecule/badge.svg)](https://github.com/diodonfrost/ansible-role-terragrunt/actions)
 [![Ansible Galaxy](https://img.shields.io/badge/galaxy-diodonfrost.terragrunt-660198.svg)](https://galaxy.ansible.com/diodonfrost/terragrunt)
 
