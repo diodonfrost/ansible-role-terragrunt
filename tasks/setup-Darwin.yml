@@ -6,6 +6,7 @@
     url: https://api.github.com/repos/gruntwork-io/terragrunt/releases/latest
     return_content: yes
   register: terragrunt_index
+  check_mode: no
   when: terragrunt_version == "latest"
 
 - name: Darwin | Filter the latest Terragrunt version

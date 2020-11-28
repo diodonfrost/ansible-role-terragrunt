@@ -8,6 +8,7 @@
     headers:
       user-agent: Mozilla/5.0
   register: terragrunt_index
+  check_mode: no
   when: terragrunt_version == "latest"
 
 - name: Windows | Filter the latest Terragrunt version
