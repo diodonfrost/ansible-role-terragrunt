@@ -2,4 +2,5 @@
 - name: Prepare
   hosts: all
   tasks:
-    - win_shell: echo "nothing to do"
+    - name: Windows | Do not use default molecule prepare file
+      win_shell: echo "nothing to do"
