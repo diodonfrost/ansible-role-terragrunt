@@ -29,7 +29,7 @@
 
 - name: Darwin | Install Terragrunt
   get_url:
-    url: "https://github.com/gruntwork-io/terragrunt/releases/download/{{ terragrunt_version_to_install }}/terragrunt_darwin_amd64"
+    url: "https://github.com/gruntwork-io/terragrunt/releases/download/{{ terragrunt_version_to_install }}/terragrunt_darwin_{{ base_arch[ansible_architecture] | default('amd64') }}"
     dest: "{{ terragrunt_path }}terragrunt"
     mode: u+x,g+x,o+x
     force: yes
