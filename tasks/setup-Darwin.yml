@@ -33,4 +33,4 @@
     dest: "{{ terragrunt_path }}terragrunt"
     mode: u+x,g+x,o+x
     force: yes
-  when: terragrunt_version_to_install not in terragrunt_installed_version.stdout | default('empty') | first
+  when: terragrunt_version_to_install not in terragrunt_installed_version.stdout | default('empty')

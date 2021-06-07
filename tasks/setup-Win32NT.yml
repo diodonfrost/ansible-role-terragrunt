@@ -39,7 +39,7 @@
     url: "https://github.com/gruntwork-io/terragrunt/releases/download/{{ terragrunt_version_to_install }}/terragrunt_windows_amd64.exe"
     dest: "{{ terragrunt_path }}terragrunt.exe"
     force: yes
-  when: terragrunt_version_to_install not in terragrunt_installed_version.stdout_lines | default('empty') | first
+  when: terragrunt_version_to_install not in terragrunt_installed_version.stdout | default('empty')
 
 - name: Windows | Add Terragrunt to PATH
   win_path:
