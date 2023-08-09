@@ -68,8 +68,8 @@ To develop or test you'll need to have installed the following:
 * [Python](https://www.python.org/) (including python-pip)
 * [Ansible](https://www.ansible.com/)
 * [Molecule](http://molecule.readthedocs.io/)
-* [Virtualbox](https://www.virtualbox.org/) (windows test only)
-* [Vagrant](https://www.vagrantup.com/downloads.html) (windows test only)
+* [Libvirt](https://www.virtualbox.org/) (windows tests only)
+* [Vagrant](https://www.vagrantup.com/downloads.html) (windows tests only)
 
 ### Testing with Docker
 
@@ -93,7 +93,7 @@ image=ansible-centos:7 molecule converge
 image=ansible-centos:7 molecule verify
 ```
 
-### Testing with Vagrant and Virtualbox
+### Testing with Vagrant and Libvirt
 
 ```shell
 # Test ansible role with Windows
