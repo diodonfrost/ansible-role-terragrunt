@@ -1,9 +1,5 @@
 ---
 - name: Converge
   hosts: all
-  tasks:
-    - name: "Include ansible-role-terragrunt"
-      include_role:
-        name: "ansible-role-terragrunt"
-      vars:
-        terragrunt_version: latest
+  roles:
+    - role: diodonfrost.terragrunt
