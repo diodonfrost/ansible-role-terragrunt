@@ -2,7 +2,7 @@
 # tasks file for install terragrunt on Windows system
 
 - name: Windows | Get the latest published full release for the repository
-  win_uri:
+  ansible.windows.win_uri:
     url: https://api.github.com/repos/gruntwork-io/terragrunt/releases/latest
     return_content: yes
     headers:
@@ -12,35 +12,35 @@
   when: terragrunt_version == "latest"
 
 - name: Windows | Filter the latest Terragrunt version
-  set_fact:
+  ansible.builtin.set_fact:
     terragrunt_version_to_install: "{{ (terragrunt_index.content | from_json).name }}"
   when: terragrunt_version == 'latest'
 
 - name: Windows | Use the specified Terragrunt version when latest var is not define
-  set_fact:
+  ansible.builtin.set_fact:
     terragrunt_version_to_install: "{{ terragrunt_version }}"
   when: terragrunt_version != 'latest'
 
 # This task avoids downloading Terragrunt every time
 - name: Windows | Check if Terragrunt is present on Windows with the right version
-  win_command: terragrunt --version
+  ansible.windows.win_command: terragrunt --version
   register: terragrunt_installed_version
   ignore_errors: yes
   changed_when: false
   failed_when: false
 
 - name: Windows | Create Terragrunt folder
-  win_file:
+  ansible.windows.win_file:
     path: "{{ terragrunt_path }}"
     state: directory
 
 - name: Windows | Download Terragrunt
-  win_get_url:
+  ansible.windows.win_get_url:
     url: "https://github.com/gruntwork-io/terragrunt/releases/download/{{ terragrunt_version_to_install }}/terragrunt_windows_{{ base_arch[ansible_architecture] | default('amd64') }}.exe"
     dest: "{{ terragrunt_path }}terragrunt.exe"
     force: yes
   when: terragrunt_version_to_install not in terragrunt_installed_version.stdout | default('empty')
 
 - name: Windows | Add Terragrunt to PATH
-  win_path:
+  ansible.windows.win_path:
     elements: "{{ terragrunt_path }}"
