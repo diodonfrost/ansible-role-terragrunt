@@ -4,3 +4,4 @@
   become: true
   roles:
     - role: diodonfrost.terragrunt
+      terragrunt_version: "{{ lookup('env', 'terragrunt_version') | default('latest', true) }}"
