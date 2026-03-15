@@ -8,4 +8,4 @@ terragrunt_version: latest
 
 # Define where to install Terragrunt binary
 # Default: use local system path defined in Ansible vars/*.yml
-terragrunt_path: "{{ terragrunt_default_path }}"
+terragrunt_path: "{{ _terragrunt_default_path }}"
