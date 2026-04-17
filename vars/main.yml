@@ -8,3 +8,5 @@ _base_arch:
   aarch64: 'arm64'
   armv7l: 'arm'
   armv6l: 'arm'
+
+_terragrunt_checksum_url: "https://github.com/gruntwork-io/terragrunt/releases/download/{{ terragrunt_version_to_install }}/SHA256SUMS"

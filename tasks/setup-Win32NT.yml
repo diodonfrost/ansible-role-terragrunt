@@ -38,6 +38,8 @@
   ansible.windows.win_get_url:
     url: "https://github.com/gruntwork-io/terragrunt/releases/download/{{ terragrunt_version_to_install }}/terragrunt_windows_{{ _base_arch[ansible_facts['architecture']] | default('amd64') }}.exe"
     dest: "{{ terragrunt_path }}terragrunt.exe"
+    checksum_url: "{{ terragrunt_checksum_url if terragrunt_checksum_verify else omit }}"
+    checksum_algorithm: "{{ 'sha256' if terragrunt_checksum_verify else omit }}"
     force: yes
   when: terragrunt_version_to_install not in terragrunt_installed_version.stdout | default('empty')
 

@@ -26,6 +26,14 @@ terragrunt_version: latest
 # Define where to install Terragrunt binary
 # Default: use local system path defined in Ansible vars/*.yml
 terragrunt_path: "{{ _terragrunt_default_path }}"
+
+# Enable SHA256 checksum verification of the downloaded binary
+# Default: true
+terragrunt_checksum_verify: true
+
+# Define the URL of the SHA256SUMS file used to verify the downloaded binary
+# Default: use the URL defined in Ansible vars/main.yml
+terragrunt_checksum_url: "{{ _terragrunt_checksum_url }}"
 ```
 
 ## Dependencies
